@@ -104,7 +104,8 @@ export default function ContactInfo() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex-shrink-0 w-full lg:w-[46%] lg:-mt-32 xl:-mt-60 z-50 mb-8 lg:mb-0"
+          
+          className="flex-shrink-0 w-full lg:w-[40%] lg:-mt-20 xl:-mt-60 z-50 mb-8 lg:mb-0"
         >
           <div
             className="w-full h-full overflow-hidden shadow-2xl rounded-2xl md:rounded-[40px] lg:rounded-[60px_60px_0_0] aspect-[16/9] lg:aspect-[4/5]"

@@ -41,12 +41,12 @@ export default function ContactHero() {
         animate="visible"
         className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10"
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center md:text-left">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center md:text-left md:-translate-x-[10%]">
           <motion.h1
             variants={fadeUp}
             className="font-black text-white leading-[0.9] drop-shadow-xl uppercase"
             style={{
-              fontSize: "clamp(2.5rem, 10vw, 7.5rem)",
+              fontSize: "clamp(2.25rem, 9vw, 6.75rem)",
               letterSpacing: "-0.04em",
             }}
           >
@@ -54,7 +54,7 @@ export default function ContactHero() {
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="mt-4 md:mt-6 text-white text-sm md:text-base font-medium leading-tight max-w-[320px] md:max-w-[380px] mx-auto md:mx-0"
+            className="mt-4 md:mt-6 text-white text-xs md:text-sm font-medium leading-tight max-w-[280px] md:max-w-[340px] mx-auto md:mx-0"
           >
             Explore our wide range of high-quality steel products, designed to
             meet all your construction and industrial needs.
