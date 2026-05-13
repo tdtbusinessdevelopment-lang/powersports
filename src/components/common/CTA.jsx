@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../../animations/variants';
-import dbl from '../../assets/dbl.png';
+import prod8 from '../../assets/i1.png';
 
 export default function CTA() {
   return (
@@ -53,7 +53,7 @@ export default function CTA() {
         className="absolute left-[5%] sm:left-[12%] bottom-[5%] md:bottom-[10%] z-20 w-[180px] sm:w-[240px] md:w-[320px] lg:w-[400px] opacity-40 md:opacity-100"
       >
         <img 
-          src={dbl} 
+          src={prod8} 
           alt="Kettlebell" 
           className="w-full h-auto drop-shadow-2xl"
         />
