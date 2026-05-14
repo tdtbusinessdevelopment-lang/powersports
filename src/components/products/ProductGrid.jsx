@@ -41,39 +41,37 @@ export default function ProductGrid({ products }) {
           ))}
         </div>
 
-        {totalPages > 1 && (
-          <div className="mt-12 flex justify-center items-center space-x-2">
+        <div className="mt-12 flex justify-center items-center space-x-2">
+          <button
+            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 border border-gray-200 rounded-lg text-black hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+          >
+            Prev
+          </button>
+          
+          {pages.map((page) => (
             <button
-              onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
-              className="px-4 py-2 border border-gray-200 rounded-lg text-black hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors font-medium ${
+                currentPage === page
+                  ? 'bg-black text-white'
+                  : 'border border-gray-200 text-black hover:bg-gray-50'
+              }`}
             >
-              Prev
+              {page}
             </button>
-            
-            {pages.map((page) => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors font-medium ${
-                  currentPage === page
-                    ? 'bg-black text-white'
-                    : 'border border-gray-200 text-black hover:bg-gray-50'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+          ))}
 
-            <button
-              onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 border border-gray-200 rounded-lg text-black hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
-            >
-              Next
-            </button>
-          </div>
-        )}
+          <button
+            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 border border-gray-200 rounded-lg text-black hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </section>
   );
