@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, scaleIn } from "../../animations/variants";
-import contbg from "../../assets/contbg.png";
-import contpic from "../../assets/contpic.png";
+import contbg from "../../assets/backgrounds/contbg.png";
+import contpic from "../../assets/ui/contpic.png";
 
 // Circle diameter and how far it hangs below the hero
 const CIRCLE_SIZE = 260;

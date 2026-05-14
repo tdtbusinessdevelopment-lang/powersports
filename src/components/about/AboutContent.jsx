@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { fadeLeft, fadeRight, staggerContainer } from "../../animations/variants";
-import d1 from "../../assets/d1.png";
-import d2 from "../../assets/d2.png";
-import i1 from "../../assets/i1.png";
-import i2 from "../../assets/i2.png";
-import i3 from "../../assets/i3.png";
+import d1 from "../../assets/ui/d1.png";
+import d2 from "../../assets/ui/d2.png";
+import i1 from "../../assets/ui/i1.png";
+import i2 from "../../assets/ui/i2.png";
+import i3 from "../../assets/ui/i3.png";
 
 /* ─── Each PRODUCT_BLOCK has 2 rows:
    Row 1 → [text LEFT]  [image RIGHT]   (Why heading + intro)

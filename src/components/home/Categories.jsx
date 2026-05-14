@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { staggerContainer, fadeUp, fadeLeft, fadeRight, scaleIn } from '../../animations/variants';
 import { PRODUCTS_DATA } from '../../data/products';
-import c2 from '../../assets/c2.png';
-import c3 from '../../assets/c3.png';
+import c2 from '../../assets/ui/c2.png';
+import c3 from '../../assets/ui/c3.png';
 
 const PRODUCTS = [
   {

@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { navSlideDown } from '../../animations/variants';
-import lg1 from '../../assets/lg1.png';
+import lg1 from '../../assets/ui/lg1.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -36,12 +37,49 @@ export default function Navbar() {
             <Link to="/" className="text-white text-sm font-semibold hover:opacity-80 transition-opacity">
               Home
             </Link>
-            <Link to="/products" className="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 transition-opacity">
-              Products
-              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsProductsDropdownOpen(true)}
+              onMouseLeave={() => setIsProductsDropdownOpen(false)}
+            >
+              <Link to="/products" className="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 transition-opacity py-4">
+                Products
+                <motion.svg 
+                  animate={{ rotate: isProductsDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-3.5 h-3.5" 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </motion.svg>
+              </Link>
+
+              <AnimatePresence>
+                {isProductsDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-[-8px] w-48 bg-white rounded-xl shadow-xl overflow-hidden py-2 z-50 border border-gray-100"
+                  >
+                    <Link 
+                      to="/products?category=chamber" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    >
+                      Power Chamber
+                    </Link>
+                    <Link 
+                      to="/products?category=beauty" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    >
+                      Power Beauty
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <Link to="/contact" className="text-white text-sm font-medium hover:opacity-80 transition-opacity">
               Contact Us
             </Link>
@@ -124,9 +162,19 @@ export default function Navbar() {
                 <Link to="/" className="text-white text-lg font-semibold hover:translate-x-2 transition-transform">
                   Home
                 </Link>
-                <Link to="/products" className="text-white text-lg font-semibold hover:translate-x-2 transition-transform">
-                  Products
-                </Link>
+                <div className="flex flex-col gap-3">
+                  <div className="text-white/70 text-sm font-semibold uppercase tracking-wider">
+                    Products
+                  </div>
+                  <div className="flex flex-col gap-3 pl-4">
+                    <Link to="/products?category=chamber" className="text-white text-lg font-semibold hover:translate-x-2 transition-transform">
+                      Power Chamber
+                    </Link>
+                    <Link to="/products?category=beauty" className="text-white text-lg font-semibold hover:translate-x-2 transition-transform">
+                      Power Beauty
+                    </Link>
+                  </div>
+                </div>
                 <Link to="/about" className="text-white text-lg font-semibold hover:translate-x-2 transition-transform">
                   About Us
                 </Link>

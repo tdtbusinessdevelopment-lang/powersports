@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeLeft, fadeRight, staggerContainer } from "../../animations/variants";
-import d1 from "../../assets/d1.png";
-import d2 from "../../assets/d2.png";
+import d1 from "../../assets/ui/d1.png";
+import d2 from "../../assets/ui/d2.png";
 
 // Proper barbell/dumbbell SVG matching reference icon
 const DumbbellIcon = () => (

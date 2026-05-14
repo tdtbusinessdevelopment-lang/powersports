@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, scaleIn } from "../../animations/variants";
 
 // Asset Imports
-import h1 from "../../assets/h1.png";
-import h2 from "../../assets/h2.png";
-import h3 from "../../assets/h3.png";
-import h4 from "../../assets/h4.png";
-import h5 from "../../assets/h5.png";
+import h1 from "../../assets/ui/h1.png";
+import h2 from "../../assets/ui/h2.png";
+import h3 from "../../assets/ui/h3.png";
+import h4 from "../../assets/ui/h4.png";
+import h5 from "../../assets/ui/h5.png";
 
 const PRODUCT_CARDS = [
   { id: 1, src: h1, alt: "Pod 1" },

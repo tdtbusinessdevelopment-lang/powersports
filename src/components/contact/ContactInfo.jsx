@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, fadeRight, staggerContainer } from '../../animations/variants';
-import contpic from '../../assets/contpic.png';
+import contpic from '../../assets/ui/contpic.png';
 
 // Amount the circle hangs down from the hero — must match ContactHero's HANG value
 const CIRCLE_HANG = 130;

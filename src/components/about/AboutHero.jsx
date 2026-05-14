@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeUp, scaleIn } from '../../animations/variants';
-import abtbg from '../../assets/abtbg.png';
+import abtbg from '../../assets/backgrounds/abtbg.png';
 
 
 export default function AboutHero() {

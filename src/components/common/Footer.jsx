@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import lg1 from "../../assets/lg1.png";
+import lg1 from "../../assets/ui/lg1.png";
 
 // Social icons
 const SocialIcon = ({ path, label }) => (

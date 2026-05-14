@@ -1,34 +1,34 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../../animations/variants';
+import bgchamber from '../../assets/backgrounds/bgchamber.png';
+import beautybg from '../../assets/backgrounds/beautybg.png';
 
-export default function ProductHero() {
+export default function ProductHero({ activeCategory = 'chamber' }) {
+  const isBeauty = activeCategory === 'beauty';
+  const title1 = "Power";
+  const title2 = isBeauty ? "Beauty" : "Chamber";
   return (
-    <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[350px] md:min-h-[500px] mt-[72px] overflow-hidden flex items-center">
+    <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[350px] md:min-h-[500px] mt-[72px] overflow-hidden flex items-center transition-all duration-500">
       {/* Background Image */}
       <img
-        src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1600&q=85" 
-        alt="Gym Background"
-        className="absolute inset-0 w-full h-full object-cover"
+        src={isBeauty ? beautybg : bgchamber} 
+        alt={isBeauty ? "Power Beauty Background" : "Power Chamber Background"}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
       />
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto w-full px-4 md:px-8 relative z-10">
         <motion.div
+          key={activeCategory}
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="max-w-md text-white space-y-2 text-center md:text-left mx-auto md:mx-0"
+          className="flex items-center h-full"
         >
-          <motion.p variants={fadeUp} className="text-xs md:text-sm font-semibold opacity-90">
-            Rated capacity: 1 person
-          </motion.p>
-          <motion.p variants={fadeUp} className="text-xs md:text-sm font-semibold opacity-90">
-            Overall dimension: 2000x1170x1850mm
-          </motion.p>
-          <motion.p variants={fadeUp} className="text-xs md:text-sm font-semibold opacity-90">
-            Chamber weight: 400kg
-          </motion.p>
+          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
+            <span className="text-white">{title1}</span> <span className="text-red-600">{title2}</span>
+          </motion.h1>
         </motion.div>
       </div>
     </section>

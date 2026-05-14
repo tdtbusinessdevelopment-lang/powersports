@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../../animations/variants';
-import prod8 from '../../assets/i1.png';
+import prod8 from '../../assets/ui/i1.png';
 
 export default function CTA() {
   return (
